@@ -1,0 +1,66 @@
+
+==============================
+importing ,modules
+cv2:
+for image processing
+OpenCV-Python is a library of Python bindings designed to solve computer vision problems. cv2.imread() method loads an image from the specified file. If the image cannot be read (because of the missing file, improper permissions, or unsupported or invalid format) then this method returns an empty matrix.
+video capture():it will either record video using web cam or take input from a video file.
+for specifying front camera pass 0, and for back cam we pass 1.
+
+VideoCapture object - The cv2.VideoCapture() method returns a VideoCapture object, which represents the input video stream. This object can be used to read frames from the video input source, set properties of the video stream, and release the resources used by the stream.
+Boolean value - When the VideoCapture.read() method is called, it returns a tuple consisting of a Boolean value and the actual image data as a NumPy array. The Boolean value indicates whether the read operation was successful or not. If the read operation was successful, the Boolean value is True, and if it failed, the Boolean value is False.
+ Once you have finished processing the frames, you can release the resources used by the VideoCapture object using the release() method.
+
+cv2.resize(old image,sizespecifications):The function modifies the original image to create the resized image, so there is no need to assign the return value to a new variable.
+cv2.cvtColor(image,cv2.COLOR_BGR2GRAY):converts the image's background colour to gray colour
+-----------------------------------------
+cv2.convexHull(): function can also be used to check if a contour is convex or not. This function takes a single argument, which is the contour that we want to check, and returns the convex hull of the contor.
+A Convex object is one with no interior angles greater than 180 degrees. A shape that is not convex is called Non-Convex or Concave. An example of a convex and a non-convex shape 
+return value of convexHull method is a contour.
+input is also a contour.
+it converts a convex or concave contour to convex contour.
+----------------------------------------
+cv2.drawContours():to draw ourline of an image
+the parameters aof this function are 
+1:frame,the image on which er want to draw contours
+2:convwxHull
+3:-1,says that we have to draw all contour
+if we writ 1 ,that means we have to specify some special contours
+4:BGR colours
+(0,255,0)--green colour
+5:thickness in pixels
+-----------------------------------------------------
+cv2.putText(image, text, org, font, fontScale, color[, thickness[, lineType[, bottomLeftOrigin]]]);
+it return an image
+linetype and bottomleftorgin are optonal parameters
+---------------------------------------------------------
+cv2.waitkey(1) & 0xff==ord('q')
+ waitkey(1) : waits for the user to input the key
+the waitkey() may return the code of the enteerd charecter in any format based on the compiler
+so convert it to unicode we use (& 0xff) it extracts last 8 bits from the retrun value of waitkey();
+ord('q'): return unicode of the specified charectr
+====================================
+
+dlib:
+it used for facial detection and shape recognition
+get_frontal_face_detector():
+it locate the human fAce in the image
+shape_predictor():
+used to predict the positions of specific facial landmarks
+===========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
